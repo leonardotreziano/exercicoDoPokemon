@@ -1,0 +1,42 @@
+package atividadeDoPokemon;
+
+public abstract class Pokemon implements IEvolucao{
+	public String tipo;
+	public String dados;
+	protected String nome;
+	private int hp;
+	private boolean ehEvolucao;
+	
+	public int calcularDanoExtra(){
+		return 0;
+	}
+	public Pokemon(String nome, int hp, boolean ehEvolucao){
+		this.nome=nome;
+		this.hp=hp;
+		this.ehEvolucao= ehEvolucao;
+	}
+	public abstract void receberAtaque (int dano);
+	
+	public abstract String getDanos();
+	
+	
+	public abstract int calcularDano(String tipoAdversario);
+		
+	public String getTipo(){
+		return tipo;
+	}
+	public String getNome() {
+		
+		return nome;
+	}
+	public int getHp() {
+		
+		return 0;
+	}
+	public String getDados() {
+		
+		return dados;
+	}
+	
+	
+}
