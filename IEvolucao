@@ -1,0 +1,5 @@
+package atividadeDoPokemon;
+
+public interface IEvolucao {
+	public abstract int calcularDanoExtra();
+}
