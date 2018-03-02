@@ -1,0 +1,47 @@
+# package atividadeDoPokemon;
+
+public class PokemonTerra extends Pokemon {
+	public int totHp;
+	public String tipo;
+	public boolean ehVolucao;
+	public int hp;
+
+	public PokemonTerra(String nome, int hp, boolean ehEvolucao) {
+		super(nome, hp, ehEvolucao);
+		
+	}
+
+	
+	public String getDanos() {
+		
+		return (nome + tipo + "hp");
+	}
+	public void receberAtaque(int dano){
+		hp = (hp - dano);
+		}
+
+	
+	public int calcularDano(String tipoAdversario) {
+		
+		if (tipoAdversario == "eletrico"){
+			totHp = (int) (10*0.05);
+		}
+		if (tipoAdversario == "fogo"){
+			totHp =(int)(10*0.02);
+		}
+		return totHp;
+		
+	}
+	public String getTipo(){
+		return tipo;
+	}
+	public int calcularDanoExtra(){
+		if (ehVolucao == true){
+			totHp=(int)(0.03);
+			return hp*totHp;
+		}
+		return hp;
+	}
+	
+
+}
