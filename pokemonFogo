@@ -1,0 +1,43 @@
+# package atividadeDoPokemon;
+
+public class PokemonFogo extends Pokemon {
+	public int totHp;
+	public String tipo;
+	public boolean ehVolucao;
+	public int hp;
+
+	public PokemonFogo(String nome, int hp, boolean ehEvolucao) {
+		super(nome, hp, ehEvolucao);
+		
+	}
+	public void receberAtaque(int dano){
+		hp = (hp - dano);
+		}
+
+	
+	public String getDanos() {
+		
+		return (nome + tipo + "hp");
+	}
+
+	
+	public int calcularDano(String tipoAdversario) {
+		
+		if (tipoAdversario == "grama"){
+			totHp = (int) (10*0.05);
+		}
+		
+		return totHp;
+		
+	}
+	public String getTipo(){
+		return tipo;
+	}
+	public int calcularDanoExtra(){
+		if (ehVolucao == true){
+			totHp=(int)(0.05);
+			return hp*totHp;
+		}
+		return hp;
+	}
+}
